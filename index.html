@@ -1,0 +1,1094 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Christopher Ceder — Fractional CEO &amp; Operations Consultant</title>
+  <meta name="description" content="Christopher Ceder helps business owners regain control through smarter operations, leadership development, and accountability. Fractional CEO &amp; consulting services." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,400;0,9..144,600;1,9..144,300&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" />
+  <style>
+/* =========================================================
+   CHRISTOPHER CEDER — SITE STYLESHEET
+   Palette: Warm ivory + deep slate + amber gold accent
+   Type: Fraunces (display) + Inter (body)
+   ========================================================= */
+
+/* RESET & BASE */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+
+:root {
+  --ivory:      #F7F4EF;
+  --ivory-dark: #EDE8DF;
+  --slate:      #1E2328;
+  --slate-mid:  #2E3640;
+  --stone:      #6B7280;
+  --gold:       #C9883D;
+  --gold-light: #E8B870;
+  --gold-bg:    #FDF6EC;
+  --white:      #FFFFFF;
+
+  --font-display: 'Fraunces', Georgia, serif;
+  --font-body:    'Inter', system-ui, sans-serif;
+
+  --max-w: 1120px;
+  --section-pad: clamp(4rem, 8vw, 7rem);
+  --radius: 4px;
+  --radius-lg: 12px;
+  --shadow: 0 2px 16px rgba(30,35,40,0.08);
+  --shadow-card: 0 4px 24px rgba(30,35,40,0.10);
+
+  --transition: 0.22s ease;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--ivory);
+  color: var(--slate);
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+/* TYPOGRAPHY */
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 400;
+  line-height: 1.18;
+  letter-spacing: -0.02em;
+}
+h1 { font-size: clamp(2.4rem, 5vw, 3.8rem); }
+h2 { font-size: clamp(1.8rem, 3.5vw, 2.8rem); }
+h3 { font-size: clamp(1.2rem, 2.2vw, 1.5rem); }
+h4 { font-size: 1.05rem; font-weight: 600; }
+
+em { font-style: italic; color: var(--gold); }
+
+p { color: var(--slate-mid); }
+
+.eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+
+/* UTILITIES */
+.container {
+  width: 100%;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+}
+
+.section-header {
+  max-width: 640px;
+  margin-bottom: 3.5rem;
+}
+.section-sub {
+  margin-top: 1rem;
+  font-size: 1.05rem;
+  color: var(--stone);
+}
+
+/* BUTTONS */
+.btn-primary {
+  display: inline-block;
+  background: var(--slate);
+  color: var(--white);
+  padding: 0.85rem 2rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  transition: background var(--transition), transform var(--transition);
+}
+.btn-primary:hover { background: var(--gold); transform: translateY(-1px); }
+
+.btn-ghost {
+  display: inline-block;
+  border: 1.5px solid var(--slate);
+  color: var(--slate);
+  padding: 0.8rem 1.9rem;
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 600;
+  transition: border-color var(--transition), color var(--transition), transform var(--transition);
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); transform: translateY(-1px); }
+
+.btn-large { padding: 1rem 2.4rem; font-size: 1rem; }
+.btn-full { width: 100%; text-align: center; }
+
+/* ==========================
+   NAVIGATION
+   ========================== */
+.nav-wrap {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(247,244,239,0.92);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--ivory-dark);
+  transition: box-shadow var(--transition);
+}
+.nav-wrap.scrolled { box-shadow: var(--shadow); }
+
+.nav-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  height: 68px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.logo {
+  font-family: var(--font-display);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: var(--slate);
+  letter-spacing: -0.01em;
+  flex-shrink: 0;
+}
+
+.nav-links {
+  display: flex;
+  list-style: none;
+  gap: 0.25rem;
+  align-items: center;
+}
+.nav-links a {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--stone);
+  padding: 0.5rem 0.9rem;
+  border-radius: var(--radius);
+  transition: color var(--transition), background var(--transition);
+}
+.nav-links a:hover, .nav-links a.active { color: var(--slate); }
+.nav-links .nav-cta {
+  background: var(--slate);
+  color: var(--white) !important;
+  padding: 0.5rem 1.1rem;
+  margin-left: 0.5rem;
+}
+.nav-links .nav-cta:hover { background: var(--gold); }
+
+.nav-toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.25rem;
+}
+.nav-toggle span {
+  display: block;
+  width: 24px;
+  height: 2px;
+  background: var(--slate);
+  border-radius: 2px;
+  transition: transform var(--transition), opacity var(--transition);
+}
+
+/* ==========================
+   HERO
+   ========================== */
+.hero {
+  position: relative;
+  padding: clamp(5rem, 12vw, 9rem) 0 clamp(4rem, 9vw, 7rem);
+  overflow: hidden;
+}
+.hero-inner {
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 clamp(1.25rem, 4vw, 3rem);
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.hero h1 { margin-bottom: 1.4rem; }
+.hero-sub {
+  font-size: clamp(1rem, 1.6vw, 1.15rem);
+  color: var(--stone);
+  max-width: 560px;
+  margin-bottom: 2.4rem;
+}
+.hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+
+.hero-mark {
+  position: absolute;
+  right: -4%;
+  top: 50%;
+  transform: translateY(-50%);
+  width: clamp(280px, 40vw, 480px);
+  aspect-ratio: 1;
+  color: var(--ivory-dark);
+  opacity: 0.8;
+  pointer-events: none;
+  animation: slowSpin 60s linear infinite;
+}
+@keyframes slowSpin { to { transform: translateY(-50%) rotate(360deg); } }
+
+/* ==========================
+   TENSION QUOTE
+   ========================== */
+.tension {
+  background: var(--slate);
+  padding: 3rem 0;
+}
+.tension p {
+  font-family: var(--font-display);
+  font-size: clamp(1.3rem, 2.8vw, 2rem);
+  color: var(--ivory);
+  text-align: center;
+  font-weight: 300;
+}
+.tension em { color: var(--gold-light); }
+
+/* ==========================
+   HOW I WORK
+   ========================== */
+.how-i-work {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+
+.pillars {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 2rem;
+}
+.pillar {
+  padding: 2.4rem 2rem;
+  border: 1px solid var(--ivory-dark);
+  border-radius: var(--radius-lg);
+  transition: box-shadow var(--transition), border-color var(--transition);
+}
+.pillar:hover { box-shadow: var(--shadow-card); border-color: var(--gold-light); }
+.pillar-icon {
+  font-size: 1.8rem;
+  margin-bottom: 1.2rem;
+}
+.pillar h3 { margin-bottom: 0.75rem; }
+.pillar p { color: var(--stone); font-size: 0.95rem; }
+
+/* ==========================
+   SERVICES PREVIEW
+   ========================== */
+.services-preview {
+  padding: var(--section-pad) 0;
+  background: var(--ivory);
+}
+
+.service-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.service-card {
+  display: block;
+  padding: 2.2rem;
+  border-radius: var(--radius-lg);
+  border: 1px solid var(--ivory-dark);
+  background: var(--white);
+  transition: box-shadow var(--transition), border-color var(--transition), transform var(--transition);
+  cursor: pointer;
+}
+.service-card:hover {
+  box-shadow: var(--shadow-card);
+  border-color: var(--gold-light);
+  transform: translateY(-3px);
+}
+.service-card--featured {
+  border-color: var(--gold);
+  background: var(--gold-bg);
+}
+
+.card-tag {
+  display: inline-block;
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  background: rgba(201,136,61,0.12);
+  padding: 0.25rem 0.65rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+.service-card h3 { margin-bottom: 0.8rem; font-size: 1.35rem; }
+.service-card p { font-size: 0.93rem; color: var(--stone); margin-bottom: 0.75rem; }
+.card-best { color: var(--slate-mid) !important; font-size: 0.88rem !important; }
+.card-link { font-size: 0.88rem; font-weight: 600; color: var(--gold); }
+
+.services-cta { text-align: center; }
+
+/* ==========================
+   PROOF / QUOTE
+   ========================== */
+.proof {
+  background: var(--gold-bg);
+  padding: var(--section-pad) 0;
+  border-top: 1px solid rgba(201,136,61,0.2);
+  border-bottom: 1px solid rgba(201,136,61,0.2);
+}
+.proof-inner { max-width: 760px; margin: 0 auto; text-align: center; }
+blockquote p {
+  font-family: var(--font-display);
+  font-size: clamp(1.2rem, 2.5vw, 1.7rem);
+  font-weight: 300;
+  font-style: italic;
+  color: var(--slate);
+  line-height: 1.5;
+  margin-bottom: 1.5rem;
+}
+blockquote cite {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--stone);
+  font-style: normal;
+}
+
+/* ==========================
+   WHO THIS IS FOR
+   ========================== */
+.who-for {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.who-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 4rem;
+  align-items: center;
+}
+.who-text h2 { margin-bottom: 1.5rem; }
+.who-list {
+  list-style: none;
+  margin-bottom: 2rem;
+}
+.who-list li {
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--ivory-dark);
+  color: var(--slate-mid);
+  font-size: 0.95rem;
+  display: flex;
+  gap: 0.75rem;
+}
+.who-list li::before {
+  content: "→";
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.visual-box {
+  background: var(--ivory);
+  border: 1px solid var(--ivory-dark);
+  border-radius: var(--radius-lg);
+  padding: 2.4rem 2rem;
+  text-align: center;
+}
+.vb-label {
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 1rem;
+}
+.vb-items {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+  margin-bottom: 1rem;
+}
+.vb-items span {
+  padding: 0.4rem 0.9rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+.vb-items.before span { background: rgba(107,114,128,0.1); color: var(--stone); }
+.vb-items.after span { background: rgba(201,136,61,0.15); color: var(--gold); }
+.vb-arrow {
+  font-size: 1.5rem;
+  color: var(--gold);
+  margin: 0.75rem 0;
+}
+
+/* ==========================
+   ABOUT TEASER
+   ========================== */
+.about-teaser {
+  padding: var(--section-pad) 0;
+  background: var(--ivory);
+}
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.5fr;
+  gap: 4rem;
+  align-items: center;
+}
+.img-frame {
+  background: var(--ivory-dark);
+  border-radius: var(--radius-lg);
+  aspect-ratio: 3/4;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: var(--stone);
+  font-size: 0.85rem;
+  border: 2px dashed rgba(107,114,128,0.3);
+}
+.img-frame.large { aspect-ratio: 4/5; }
+.about-text h2 { margin-bottom: 1.4rem; }
+.about-text p { margin-bottom: 1rem; color: var(--stone); }
+.about-text .btn-ghost { margin-top: 0.5rem; }
+
+/* ==========================
+   CTA STRIP
+   ========================== */
+.cta-strip {
+  background: var(--slate);
+  padding: var(--section-pad) 0;
+  text-align: center;
+}
+.cta-strip h2 { color: var(--ivory); margin-bottom: 1rem; }
+.cta-strip p { color: rgba(247,244,239,0.7); max-width: 560px; margin: 0 auto 2.5rem; font-size: 1.05rem; }
+.cta-strip .btn-primary { background: var(--gold); }
+.cta-strip .btn-primary:hover { background: var(--gold-light); }
+
+/* ==========================
+   FOOTER
+   ========================== */
+.site-footer {
+  background: var(--ivory-dark);
+  border-top: 1px solid rgba(30,35,40,0.08);
+  padding: 3rem 0;
+}
+.footer-inner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+.footer-brand .logo { font-size: 1rem; }
+.footer-brand p { font-size: 0.82rem; color: var(--stone); margin-top: 0.25rem; }
+.footer-nav {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+  flex-wrap: wrap;
+}
+.footer-nav a { font-size: 0.88rem; color: var(--stone); transition: color var(--transition); }
+.footer-nav a:hover { color: var(--slate); }
+.footer-copy { font-size: 0.8rem; color: var(--stone); width: 100%; }
+
+/* ==========================
+   PAGE HERO (inner pages)
+   ========================== */
+.page-hero {
+  padding: clamp(3.5rem, 8vw, 6rem) 0 clamp(2.5rem, 5vw, 4rem);
+  background: var(--white);
+  border-bottom: 1px solid var(--ivory-dark);
+}
+.page-hero h1 { margin-top: 0.5rem; }
+.page-hero .hero-sub {
+  font-size: 1.05rem;
+  color: var(--stone);
+  max-width: 600px;
+  margin-top: 1.2rem;
+}
+
+/* ==========================
+   SERVICES DETAIL
+   ========================== */
+.service-detail { padding: var(--section-pad) 0; }
+.service-detail:nth-child(odd) { background: var(--white); }
+.service-detail:nth-child(even) { background: var(--ivory); }
+
+.service-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 4rem;
+  align-items: start;
+}
+.service-detail-text h2 { margin: 0.6rem 0 0.4rem; }
+.service-price {
+  font-size: 0.88rem;
+  color: var(--stone);
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.service-detail-text p { margin-bottom: 1rem; color: var(--stone); }
+.service-detail-text h4 { margin: 1.5rem 0 0.75rem; color: var(--slate); }
+.service-list {
+  list-style: none;
+  margin-bottom: 1.5rem;
+}
+.service-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--ivory-dark);
+  color: var(--slate-mid);
+  font-size: 0.93rem;
+  display: flex;
+  gap: 0.7rem;
+}
+.service-list li::before { content: "✓"; color: var(--gold); flex-shrink: 0; }
+
+.aside-card {
+  background: var(--ivory);
+  border: 1px solid var(--ivory-dark);
+  border-radius: var(--radius-lg);
+  padding: 2rem;
+  position: sticky;
+  top: 88px;
+}
+.aside-card h4 { margin-bottom: 1rem; }
+.aside-card ul { list-style: none; }
+.aside-card li {
+  padding: 0.55rem 0;
+  border-bottom: 1px solid var(--ivory-dark);
+  font-size: 0.9rem;
+  color: var(--stone);
+  display: flex;
+  gap: 0.6rem;
+}
+.aside-card li::before { content: "·"; color: var(--gold); font-size: 1.2rem; line-height: 1; }
+
+.service-divider { padding: 0; }
+.service-divider hr { border: none; border-top: 1px solid var(--ivory-dark); }
+
+/* ==========================
+   FAQ
+   ========================== */
+.faq-section {
+  padding: var(--section-pad) 0;
+  background: var(--gold-bg);
+}
+.faq-list { max-width: 760px; }
+.faq-item { border-bottom: 1px solid rgba(201,136,61,0.25); }
+.faq-q {
+  width: 100%;
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 1.3rem 0;
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 600;
+  color: var(--slate);
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+.faq-q::after {
+  content: "+";
+  font-size: 1.3rem;
+  color: var(--gold);
+  flex-shrink: 0;
+  transition: transform var(--transition);
+}
+.faq-q[aria-expanded="true"]::after { transform: rotate(45deg); }
+.faq-a {
+  display: none;
+  padding-bottom: 1.3rem;
+}
+.faq-a.open { display: block; }
+.faq-a p { color: var(--stone); font-size: 0.95rem; }
+
+/* ==========================
+   ABOUT FULL PAGE
+   ========================== */
+.about-full {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.about-full-grid {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 4rem;
+  align-items: start;
+}
+.about-full-text h2 { margin-bottom: 1.4rem; }
+.about-full-text p { margin-bottom: 1rem; color: var(--stone); }
+
+.principles {
+  padding: var(--section-pad) 0;
+  background: var(--ivory);
+}
+.principles-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 2rem;
+}
+.principle-item {
+  padding: 2rem;
+  background: var(--white);
+  border: 1px solid var(--ivory-dark);
+  border-radius: var(--radius-lg);
+}
+.principle-item h3 { margin-bottom: 0.75rem; font-size: 1.15rem; }
+.principle-item p { font-size: 0.93rem; color: var(--stone); }
+
+.what-i-bring {
+  padding: var(--section-pad) 0;
+  background: var(--white);
+}
+.bring-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.5rem;
+}
+.bring-item {
+  padding: 1.5rem;
+  border-top: 2px solid var(--gold);
+}
+.bring-label {
+  display: block;
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.6rem;
+}
+.bring-item p { font-size: 0.88rem; color: var(--stone); }
+
+.personal-note {
+  padding: var(--section-pad) 0;
+  background: var(--slate);
+}
+.note-inner {
+  max-width: 680px;
+  margin: 0 auto;
+  text-align: center;
+}
+.note-inner .eyebrow { color: var(--gold-light); }
+.note-inner p { color: rgba(247,244,239,0.78); margin-bottom: 1.2rem; font-size: 1.05rem; }
+.note-inner .btn-primary { background: var(--gold); margin-top: 0.5rem; }
+.note-inner .btn-primary:hover { background: var(--gold-light); }
+
+/* ==========================
+   CONTACT PAGE
+   ========================== */
+.contact-hero {
+  padding: clamp(3rem, 7vw, 6rem) 0 var(--section-pad);
+}
+.contact-grid {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: 5rem;
+  align-items: start;
+}
+.contact-text h1 { margin: 0.5rem 0 1.2rem; }
+.contact-text p { color: var(--stone); margin-bottom: 1rem; font-size: 0.98rem; }
+
+.contact-direct { margin-top: 2.5rem; }
+.contact-direct-label {
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--stone);
+  margin-bottom: 0.75rem;
+}
+.contact-link {
+  display: block;
+  color: var(--slate);
+  font-weight: 500;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid var(--ivory-dark);
+  transition: color var(--transition);
+  font-size: 0.95rem;
+}
+.contact-link:hover { color: var(--gold); }
+
+.contact-form-wrap {
+  background: var(--white);
+  border: 1px solid var(--ivory-dark);
+  border-radius: var(--radius-lg);
+  padding: 2.5rem 2.2rem;
+  box-shadow: var(--shadow-card);
+}
+.contact-form { display: flex; flex-direction: column; gap: 1.4rem; }
+.form-row { display: flex; flex-direction: column; gap: 0.4rem; }
+.form-row label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--slate);
+}
+.form-row input,
+.form-row textarea,
+.form-row select {
+  width: 100%;
+  padding: 0.75rem 1rem;
+  border: 1.5px solid var(--ivory-dark);
+  border-radius: var(--radius);
+  font-family: var(--font-body);
+  font-size: 0.93rem;
+  color: var(--slate);
+  background: var(--ivory);
+  transition: border-color var(--transition), box-shadow var(--transition);
+  outline: none;
+  appearance: none;
+}
+.form-row input:focus,
+.form-row textarea:focus,
+.form-row select:focus {
+  border-color: var(--gold);
+  box-shadow: 0 0 0 3px rgba(201,136,61,0.12);
+}
+.form-row textarea { resize: vertical; min-height: 110px; }
+.form-note {
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--stone);
+  margin-top: -0.5rem;
+}
+
+/* ==========================
+   RESPONSIVE
+   ========================== */
+@media (max-width: 900px) {
+  .who-grid,
+  .about-grid,
+  .about-full-grid,
+  .service-detail-grid,
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+  .hero-mark { display: none; }
+  .who-visual { order: -1; }
+  .aside-card { position: static; }
+  .about-full-img .img-frame { max-width: 320px; aspect-ratio: 1/1; }
+}
+
+@media (max-width: 640px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    background: var(--ivory);
+    border-bottom: 1px solid var(--ivory-dark);
+    flex-direction: column;
+    padding: 1rem;
+    gap: 0.25rem;
+  }
+  .nav-links.open { display: flex; }
+  .nav-links a { display: block; padding: 0.75rem 1rem; }
+  .nav-toggle { display: flex; }
+
+  .hero-actions { flex-direction: column; }
+  .hero-actions .btn-primary,
+  .hero-actions .btn-ghost { text-align: center; }
+
+  .service-cards { grid-template-columns: 1fr; }
+  .pillars { grid-template-columns: 1fr; }
+  .principles-grid { grid-template-columns: 1fr; }
+  .bring-grid { grid-template-columns: 1fr 1fr; }
+  .footer-inner { flex-direction: column; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* Logo image in nav */
+.logo { display: flex; align-items: center; gap: 0.6rem; }
+.logo-img { height: 40px; width: auto; display: block; }
+.logo-text { font-family: var(--font-display); font-size: 1.1rem; font-weight: 400; color: var(--slate); letter-spacing: -0.01em; }
+
+/* Green accent from logo */
+:root { --green: #2A7A3B; --green-light: #3E9B51; }
+
+.pillar-icon { color: var(--green); }
+.service-card--featured { border-color: var(--green) !important; }
+.who-list li::before { color: var(--green); }
+.service-list li::before { color: var(--green); }
+.bring-item { border-top-color: var(--green); }
+.bring-label { color: var(--green); }
+.tension { background: var(--green); }
+  </style>
+</head>
+<body>
+
+  <header class="nav-wrap" id="nav">
+    <nav class="nav-inner">
+      <a href="index.html" class="logo">
+        <img src="logo.png" alt="CederBI Logo" class="logo-img" />
+        <span class="logo-text">Christopher Ceder</span>
+      </a>
+      <button class="nav-toggle" aria-label="Open menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <ul class="nav-links">
+        <li><a href="index.html#how-i-work">How I Work</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="contact.html" class="nav-cta">Let's Talk</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="hero-inner">
+        <p class="eyebrow">Fractional CEO &amp; Operations Consultant</p>
+        <h1>Your business can grow.<br /><em>Let's make space for it.</em></h1>
+        <p class="hero-sub">Most owners know what needs to happen — they just don't have the time or structure to make it stick. I step in as a strategic partner to build the systems, develop the leadership, and create the accountability that lets you lead instead of grind.</p>
+        <div class="hero-actions">
+          <a href="contact.html" class="btn-primary">Start with a Strategy Call</a>
+          <a href="services.html" class="btn-ghost">See How It Works</a>
+        </div>
+      </div>
+      <div class="hero-mark" aria-hidden="true">
+        <svg viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="200" cy="200" r="190" stroke="currentColor" stroke-width="1" stroke-dasharray="6 10"/>
+          <circle cx="200" cy="200" r="130" stroke="currentColor" stroke-width="0.5" opacity="0.5"/>
+          <line x1="200" y1="10" x2="200" y2="390" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+          <line x1="10" y1="200" x2="390" y2="200" stroke="currentColor" stroke-width="0.5" opacity="0.3"/>
+        </svg>
+      </div>
+    </section>
+
+    <section class="tension">
+      <div class="container">
+        <p>"You didn't start your business to spend every day <em>inside</em> it."</p>
+      </div>
+    </section>
+
+    <section class="how-i-work" id="how-i-work">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">My Approach</p>
+          <h2>Structure first. Growth follows.</h2>
+          <p class="section-sub">I don't hand you a strategy deck and disappear. I work alongside you — digging into operations, developing your team, and building systems that hold up when you step back.</p>
+        </div>
+        <div class="pillars">
+          <div class="pillar">
+            <div class="pillar-icon">⚙</div>
+            <h3>Smarter Operations</h3>
+            <p>Identifying what's slowing you down and building repeatable processes so the business runs without you in every room.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🧭</div>
+            <h3>Leadership Development</h3>
+            <p>Coaching your managers and team leads so decisions get made without you being the bottleneck on everything.</p>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">📋</div>
+            <h3>Accountability Systems</h3>
+            <p>Clear scorecards, rhythms, and check-ins that keep your team aligned and moving — even when you're not in the room.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="services-preview">
+      <div class="container">
+        <div class="section-header">
+          <p class="eyebrow">Services</p>
+          <h2>Where do you need to start?</h2>
+        </div>
+        <div class="service-cards">
+          <a href="services.html#clarity" class="service-card">
+            <div class="card-tag">Single Session</div>
+            <h3>Get Clarity Fast</h3>
+            <p>A focused 1:1 strategy session to surface what's holding you back and map your next steps. Walk away with a clear, prioritized path forward.</p>
+            <p class="card-best"><strong>Best for:</strong> Owners who feel stuck or overwhelmed and need direction before making bigger changes.</p>
+            <span class="card-link">Learn more →</span>
+          </a>
+          <a href="services.html#structure" class="service-card service-card--featured">
+            <div class="card-tag">Project-Based</div>
+            <h3>Build Structure That Lasts</h3>
+            <p>Focused work to build or rebuild key areas of your business — SOPs, workflows, dashboards, training programs, or whatever your operation needs most.</p>
+            <p class="card-best"><strong>Best for:</strong> Businesses that know what needs fixing and want expert execution.</p>
+            <span class="card-link">Learn more →</span>
+          </a>
+          <a href="services.html#systems" class="service-card">
+            <div class="card-tag">Ongoing Partnership</div>
+            <h3>Turn Chaos Into Systems</h3>
+            <p>A hands-on collaboration to organize your operations, strengthen leadership, and create consistency across your team — with regular strategy calls and accountability built in.</p>
+            <p class="card-best"><strong>Best for:</strong> Owners ready to move from running everything to leading a self-sufficient team.</p>
+            <span class="card-link">Learn more →</span>
+          </a>
+        </div>
+        <div class="services-cta">
+          <a href="services.html" class="btn-primary">View All Services</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="proof">
+      <div class="container">
+        <div class="proof-inner">
+          <blockquote>
+            <p>"Working with Christopher changed how I see my role as an owner. I stopped being the person who fixes every problem and started actually leading my business."</p>
+            <cite>— A business owner who made the shift</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <section class="who-for">
+      <div class="container">
+        <div class="who-grid">
+          <div class="who-text">
+            <p class="eyebrow">Is This You?</p>
+            <h2>You've built something real.<br />Now it needs to run without you holding it together.</h2>
+            <ul class="who-list">
+              <li>You're the first one in and the last one out — every day</li>
+              <li>Your team is capable, but they're always waiting on you</li>
+              <li>You have big growth plans that keep getting pushed back</li>
+              <li>Processes exist in your head, not in any kind of system</li>
+              <li>You need a thinking partner, not just another consultant</li>
+            </ul>
+            <a href="contact.html" class="btn-primary">Let's Figure Out Your Next Step</a>
+          </div>
+          <div class="who-visual" aria-hidden="true">
+            <div class="visual-box">
+              <div class="vb-label">Before</div>
+              <div class="vb-items before">
+                <span>Reactive</span><span>Bottleneck</span><span>Overwhelmed</span><span>Ad hoc</span>
+              </div>
+              <div class="vb-arrow">↓</div>
+              <div class="vb-label">After</div>
+              <div class="vb-items after">
+                <span>Proactive</span><span>Empowered</span><span>Intentional</span><span>Systematic</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="about-teaser">
+      <div class="container">
+        <div class="about-grid">
+          <div class="about-img-placeholder" aria-hidden="true">
+            <div class="img-frame"><span>Your Photo Here</span></div>
+          </div>
+          <div class="about-text">
+            <p class="eyebrow">About Christopher</p>
+            <h2>I've been inside operations that were growing faster than their structure could hold.</h2>
+            <p>I know what it looks like when a business outgrows its systems — the firefighting, the communication gaps, the good people making decisions without context. I've spent my career helping owners build the infrastructure that matches their ambition.</p>
+            <p>I work with a small number of clients at a time so I can actually show up — not just check in.</p>
+            <a href="about.html" class="btn-ghost">More About My Background</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-strip">
+      <div class="container">
+        <h2>Ready to stop being the ceiling of your own business?</h2>
+        <p>Let's start with a conversation. No pitch, no pressure — just an honest look at where you are and where you want to go.</p>
+        <a href="contact.html" class="btn-primary btn-large">Book a Strategy Session</a>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <div class="footer-brand">
+        <a href="index.html" class="logo">
+          <img src="logo.png" alt="CederBI Logo" class="logo-img" style="height:32px;" />
+          <span class="logo-text">Christopher Ceder</span>
+        </a>
+        <p>Fractional CEO &amp; Operations Consultant</p>
+      </div>
+      <nav class="footer-nav">
+        <a href="services.html">Services</a>
+        <a href="about.html">About</a>
+        <a href="contact.html">Contact</a>
+      </nav>
+      <p class="footer-copy">© 2026 Christopher Ceder. All rights reserved.</p>
+    </div>
+  </footer>
+
+  <script>
+// NAV: scroll shadow
+const nav = document.getElementById('nav');
+if (nav) {
+  window.addEventListener('scroll', () => {
+    nav.classList.toggle('scrolled', window.scrollY > 20);
+  }, { passive: true });
+}
+
+// NAV: mobile toggle
+const toggle = document.querySelector('.nav-toggle');
+const links  = document.querySelector('.nav-links');
+if (toggle && links) {
+  toggle.addEventListener('click', () => {
+    const open = links.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', open);
+  });
+  // Close on link click
+  links.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      links.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+}
+
+// FAQ accordion
+document.querySelectorAll('.faq-q').forEach(btn => {
+  btn.addEventListener('click', () => {
+    const answer  = btn.nextElementSibling;
+    const isOpen  = btn.getAttribute('aria-expanded') === 'true';
+    // Close all
+    document.querySelectorAll('.faq-q').forEach(b => {
+      b.setAttribute('aria-expanded', 'false');
+      b.nextElementSibling.classList.remove('open');
+    });
+    // Open if was closed
+    if (!isOpen) {
+      btn.setAttribute('aria-expanded', 'true');
+      answer.classList.add('open');
+    }
+  });
+});
+
+// Smooth scroll for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(a => {
+  a.addEventListener('click', e => {
+    const target = document.querySelector(a.getAttribute('href'));
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  });
+});
+  </script>
+</body>
+</html>
